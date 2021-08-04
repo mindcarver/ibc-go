@@ -4,6 +4,15 @@
 
 ## Table of Contents
 
+- [ibc/applications/nft_transfer/v1/nft_transfer.proto](#ibc/applications/nft_transfer/v1/nft_transfer.proto)
+    - [NonFungibleTokenPacketData](#ibc.applications.nft_transfer.v1.NonFungibleTokenPacketData)
+  
+- [ibc/applications/nft_transfer/v1/tx.proto](#ibc/applications/nft_transfer/v1/tx.proto)
+    - [MsgNftTransfer](#ibc.applications.nft_transfer.v1.MsgNftTransfer)
+    - [MsgNftTransferResponse](#ibc.applications.nft_transfer.v1.MsgNftTransferResponse)
+  
+    - [Msg](#ibc.applications.nft_transfer.v1.Msg)
+  
 - [ibc/applications/transfer/v1/transfer.proto](#ibc/applications/transfer/v1/transfer.proto)
     - [DenomTrace](#ibc.applications.transfer.v1.DenomTrace)
     - [FungibleTokenPacketData](#ibc.applications.transfer.v1.FungibleTokenPacketData)
@@ -243,6 +252,100 @@
     - [Misbehaviour](#ibc.lightclients.tendermint.v1.Misbehaviour)
   
 - [Scalar Value Types](#scalar-value-types)
+
+
+
+<a name="ibc/applications/nft_transfer/v1/nft_transfer.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ibc/applications/nft_transfer/v1/nft_transfer.proto
+
+
+
+<a name="ibc.applications.nft_transfer.v1.NonFungibleTokenPacketData"></a>
+
+### NonFungibleTokenPacketData
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `class` | [string](#string) |  | the class to which the NFT to be transferred belongs |
+| `id` | [string](#string) |  | the nft id |
+| `uri` | [string](#string) |  | the address defined by NFT outside the chain |
+| `sender` | [string](#string) |  | the nft sender |
+| `receiver` | [string](#string) |  | the nft receiver |
+| `away_from_origin` | [bool](#bool) |  | identify whether it is far away from the source chain |
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="ibc/applications/nft_transfer/v1/tx.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ibc/applications/nft_transfer/v1/tx.proto
+
+
+
+<a name="ibc.applications.nft_transfer.v1.MsgNftTransfer"></a>
+
+### MsgNftTransfer
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `class` | [string](#string) |  | the class to which the NFT to be transferred belongs |
+| `id` | [string](#string) |  | the nft id |
+| `uri` | [string](#string) |  | the address defined by NFT outside the chain |
+| `sender` | [string](#string) |  | the nft sender |
+| `receiver` | [string](#string) |  | the nft receiver |
+| `away_from_origin` | [bool](#bool) |  | identify whether it is far away from the source chain |
+| `dest_chain` | [string](#string) |  | target chain of transmission |
+| `realay_chain` | [string](#string) |  | relay chain during transmission |
+
+
+
+
+
+
+<a name="ibc.applications.nft_transfer.v1.MsgNftTransferResponse"></a>
+
+### MsgNftTransferResponse
+MsgTransferResponse defines the Msg/NftTransfer response type.
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+
+<a name="ibc.applications.nft_transfer.v1.Msg"></a>
+
+### Msg
+Msg defines the ibc/nftTransfer Msg service.
+
+| Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
+| ----------- | ------------ | ------------- | ------------| ------- | -------- |
+| `NftTransfer` | [MsgNftTransfer](#ibc.applications.nft_transfer.v1.MsgNftTransfer) | [MsgNftTransferResponse](#ibc.applications.nft_transfer.v1.MsgNftTransferResponse) | NftTransfer defines a rpc handler method for MsgNftTransfer. | |
+
+ <!-- end services -->
 
 
 
